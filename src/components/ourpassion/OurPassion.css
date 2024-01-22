@@ -1,0 +1,170 @@
+.our-passion-container{
+    /* background-color: gray; */
+  height: 100%;
+    width: 100%;
+    padding: 80px 60px 20px 80px;
+    max-width: 2000px;
+}
+.our-passion-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0px 40px 0px;
+}
+.our-passion-title{
+    background: linear-gradient(180deg, #4ECD72 0%, #101828 97%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+text-align: center;
+font-family: Montserrat;
+font-size: 48px;
+font-style: normal;
+font-weight: 500;
+line-height: 60px; /* 125% */
+letter-spacing: -0.96px;
+}
+.our-passion-info{
+    border-radius: 40px;
+background: linear-gradient(180deg, #F3F9FF 0%, #FCFFF2 100%);
+
+padding: 60px 64px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 5%;
+gap: 40px;
+}
+.our-passion-description{
+    color: #667085;
+text-align: center;
+font-family: Montserrat;
+font-size: 26px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 39px */
+}
+.join-us-content{
+    width: 100%;
+    max-width: 1216px;
+   padding: 4%;
+    background-color:rgba(240, 68, 69, 0.80);
+
+    border-radius: 40px;
+background: linear-gradient(0deg, rgba(240, 68, 69, 0.80) 0%, rgba(240, 68, 69, 0.80) 100%), url(/src/images/gradient.svg), lightgray 50% / cover no-repeat;
+    margin-top: 60px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 52px;
+ 
+}
+.join-us-text{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 42px */
+text-align: center;
+}
+.join-us-btn{
+    border-radius: 16px;
+border: 1px solid #FFF;
+display: flex;
+padding: 12px 20px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+width: 100%;
+max-width: 300px;
+
+color: #FFF;
+cursor: pointer;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}
+.footer-section-space{
+    background-color: antiquewhite;
+    height: 200px;
+}
+@media screen and (max-width : 980px) and (min-width : 0px) {
+    .our-passion-info{
+        border-radius: 40px;
+    background: linear-gradient(180deg, #F3F9FF 0%, #FCFFF2 100%);
+    
+    padding: 60px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 40px;
+    }
+    .our-passion-container{
+      
+        padding: 10px 0px 20px 0px;
+    }
+}
+@media screen and (max-width : 580px) and (min-width : 0px) {
+ 
+    .our-passion-container{
+      
+        padding: 10px 0px 20px 0px;
+    }
+    .our-passion-description{
+        font-size: 22px;
+    }
+    .our-passion-content{
+        gap: 12px;
+        padding: 20px 0 40px;
+    }
+}
+
+@media screen and (max-width : 690px) and (min-width : 450px) {
+    .our-passion-title{
+       
+    font-size: 42px;
+ 
+    }
+            }
+            @media screen and (max-width : 450px) and (min-width : 0px) {
+                .our-passion-title{
+                   
+                font-size: 38px;
+                line-height: 46px;
+             
+                }
+                        }
+
+                        @media screen and (max-width : 620px) and (min-width : 0px) {
+                          .join-us-text{
+                            font-size: 24px;
+                          }
+                                    }
+                                    @media screen and (max-width : 450px) and (min-width : 0px) {
+                                        .join-us-text{
+                                          font-size: 22px;
+                                        }
+                                        .join-us-content{
+                                        
+                                         
+                                            gap: 22px;
+                                        }
+                                                  }
+
+                                                  @media screen and (max-width : 981px) and (min-width : 0px) {
+                                                   .join-us-content{
+                                                    border-radius: 0px;
+                                                    gap: 22px;
+                                                   }
+                                                              }
