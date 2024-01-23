@@ -25,13 +25,13 @@ requestAnimationFrame(raf)
 
   return (
     <>
-  <BrowserRouter>
-  <Navbar/>
-  <Routes>
-    <Route path='/' Component={Home}/>
-  </Routes>
-<Footer/>
-  </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/shimmeringlights-master' Component={Home} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }
