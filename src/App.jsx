@@ -5,7 +5,8 @@ import { Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import Lenis from '@studio-freight/lenis'
+import Lenis from '@studio-freight/lenis';
+import AboutUs from './components/aboutus/AboutUs'
 
 function App() {
 
@@ -28,6 +29,7 @@ requestAnimationFrame(raf)
         <Navbar />
         <Routes>
           <Route path='/' Component={Home} />
+          <Route path='/aboutus' Component={AboutUs} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -42,6 +42,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
+    text-decoration: none;
 }
 .navbar-mobile-tab{
     cursor: pointer;
@@ -50,6 +51,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
+    text-decoration: none;
 }
 
 @media screen and (max-width : 770px) and (min-width : 0px) {
