@@ -28,7 +28,7 @@ requestAnimationFrame(raf)
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/shimmeringlightssite' Component={Home} />
+          <Route path='/' Component={Home} />
         </Routes>
         <Footer />
       </BrowserRouter>
