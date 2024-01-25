@@ -46,7 +46,7 @@ line-height: 90px;
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 1800px;
-    padding: 60px 60px;
+    padding: 60px 120px;
    
 
 }
@@ -71,6 +71,11 @@ width: 180px;
 font-size: 16px;
 margin-top: 12px;
 cursor: pointer;
+text-decoration: none;
+}
+.explore-product-link{
+text-decoration: none;
+color: white;
 }
 .home-content-info{
    
@@ -93,7 +98,7 @@ cursor: pointer;
     overflow: hidden;
 }
 /* media query */
-@media screen and (max-width : 770px) and (min-width : 0px) {
+@media screen and (max-width : 900px) and (min-width : 0px) {
     .home-title{
       
     font-size: 52px;

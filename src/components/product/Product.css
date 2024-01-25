@@ -1,0 +1,33 @@
+.services-container {
+    /* background-color: rgb(62, 62, 62); */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-content {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.services-banner {
+    /* background-color: antiquewhite; */
+
+    height: 30vh;
+    background-image: url(/src/images/bannerimage.svg);
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

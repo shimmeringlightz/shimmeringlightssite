@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 60px 140px 20px 140px;
+    padding: 60px 120px 20px 120px;
     /* background-color: #839ed3; */
 }
 .our-info-contents{
@@ -14,6 +14,8 @@
     flex-direction: column;
     align-items: center;
     max-width: 2000px;
+   width: 100%;
+  
     /* background-color: #101828; */
  
    
@@ -23,6 +25,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    
 }
 .info-products-left {
     /* background-color: #b3bcd0; */
@@ -343,6 +346,11 @@ bottom: -42px;
         transform: translate(-52px ,0px);
         
         }
+        .info-title{
+            font-size: 38px;
+            line-height: 56px;
+        }
+        
         
     
       }

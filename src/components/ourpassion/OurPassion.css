@@ -2,7 +2,7 @@
     /* background-color: gray; */
   height: 100%;
     width: 100%;
-    padding: 80px 60px 20px 80px;
+    /* padding: 80px 60px 20px 80px; */
     max-width: 2000px;
 }
 .our-passion-content{
@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 60px 0px 40px 0px;
+    padding: 60px 120px 40px 120px;
 }
 .our-passion-title{
     background: linear-gradient(180deg, #4ECD72 0%, #101828 97%);
@@ -47,10 +47,11 @@ font-size: 26px;
 font-style: normal;
 font-weight: 400;
 line-height: 150%; /* 39px */
+padding: 0px 25px;
 }
 .join-us-content{
     width: 100%;
-    max-width: 1216px;
+    max-width: 2000px;
    padding: 4%;
     background-color:rgba(240, 68, 69, 0.80);
 
@@ -123,11 +124,13 @@ line-height: 24px; /* 150% */
     }
     .our-passion-description{
         font-size: 22px;
+        padding: 0px 10px;
     }
     .our-passion-content{
         gap: 12px;
         padding: 20px 0 40px;
     }
+    
 }
 
 @media screen and (max-width : 690px) and (min-width : 450px) {
@@ -139,16 +142,22 @@ line-height: 24px; /* 150% */
             }
             @media screen and (max-width : 450px) and (min-width : 0px) {
                 .our-passion-title{
-                   
                 font-size: 38px;
                 line-height: 46px;
-             
+                }
+                .join-us-btn{
+                    width: 200px;
                 }
                         }
 
                         @media screen and (max-width : 620px) and (min-width : 0px) {
                           .join-us-text{
                             font-size: 24px;
+                          }
+                          .our-passion-title{
+                            font-size: 34px;
+                            line-height: 54px;
+    padding: 0px 20px;
                           }
                                     }
                                     @media screen and (max-width : 450px) and (min-width : 0px) {

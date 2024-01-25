@@ -2,8 +2,9 @@ import React from 'react';
 import '../footer/Footer.css';
 import logo from '/src/images/logo.svg';
 import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = ({ activeLink, onLinkClick }) => {
   return (
     <div className='footer-container'>
         <div className='footer-content'>
@@ -277,10 +278,18 @@ const Footer = () => {
 
                        <div className='footer-company-section'>
                        <div className='company-section-title'>Company</div>
-                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>About</motion.div>
-                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>Services</motion.div>
-                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>Product</motion.div>
-                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>Contact</motion.div>
+                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>
+                        <Link to='/aboutus' onClick={() => onLinkClick('about')} className='company-section-tab'>About</Link>
+                        </motion.div>
+                        <motion.div whileHover={{scale:1.04}}>
+                        <Link to='/services' onClick={() => onLinkClick('services')} className='company-section-tab'>Services</Link>
+                        </motion.div>
+                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>
+                        <Link to='/product' onClick={() => onLinkClick('product')} className='company-section-tab'>Product</Link>
+                        </motion.div>
+                        <motion.div whileHover={{scale:1.04}} className='company-section-tab'>
+                        <Link to='/contact' onClick={() => onLinkClick('contact')} className='company-section-tab'>Contact</Link>
+                        </motion.div>
                        </div>
 
                        <div className='footer-services-section'>

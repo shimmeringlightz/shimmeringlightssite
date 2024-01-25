@@ -1,4 +1,4 @@
-.aboutus-container{
+.aboutus-container {
     /* background-color: rgb(62, 62, 62); */
     height: 100%;
     width: 100%;
@@ -6,28 +6,29 @@
     justify-content: center;
     align-items: center;
 }
-.aboutus-content{
-    height: 100%;
- width: 100%;
- margin: 0;
- padding: 0;
- display: flex;
- justify-content: flex-start;
- flex-direction: column;
 
+.aboutus-content {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 2000px;
 }
 
-.about-us-banner{
+.about-us-banner {
     /* background-color: antiquewhite; */
- 
+
     height: 30vh;
     background-image: url(/src/images/bannerimage.svg);
-  
+
     background-size: cover;
     background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .about-us-text{
@@ -45,7 +46,7 @@
 height: 100%;
 justify-content: space-between;
     display: flex;
-    padding: 60px 60px;
+    padding: 80px 120px;
 }
 .aboutus-sec-right{
     display: flex;

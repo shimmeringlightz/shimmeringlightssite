@@ -1,15 +1,39 @@
 import React,{useRef,useState,useEffect} from 'react';
 import '../navbar/Navbar.css';
 import logo from '/src/images/logo.svg';
-import {inView, motion} from 'framer-motion';
+import {inView, motion , useScroll} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import mobilelogo from '/src/images/mobilelogo.svg';
 
-const Navbar = () => {
+
+const Navbar = ({ activeLink, onLinkClick }) => {
+
+
+    const [scrollY, setScrollY] = useState(0);
+  
+   
 
     const redirecttohome = () =>{
         window.location.href = '/';
     }
+
+   
+
+    useEffect(()=>{
+
+        const handleScroll = () => {
+            setScrollY(window.scrollY)
+        }
+
+        window.addEventListener('scroll',handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll',handleScroll)
+        };
+
+    },[])
+  
 
     const[isNavbarToggled,setIsNavbarToggled] = useState(false)
     const navbarspace = useRef(null)
@@ -23,6 +47,8 @@ const Navbar = () => {
     const crossicon = useRef(null)
     
     useEffect(() => {
+
+       
 
         if (isNavbarToggled) {
             console.log('toggled')
@@ -72,32 +98,49 @@ const Navbar = () => {
     }
 
     return (
-        <motion.div ref={navbarspace} variants={animation} initial="initial" animate={inView ? "enter" : ""} className='navbar-space'>
+        <motion.div style={{ backgroundColor : scrollY > 0.2 * window.innerHeight ? 'white':'rgba(0, 0, 0, 0.10)'}} ref={navbarspace} variants={animation} initial="initial" animate={inView ? "enter" : ""} className='navbar-space'>
             <div  ref={navbarcontent}  className='navbar-content'>
                 <div ref={navbarleft} className='navbar-left'>
-                    <img onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={logo} width='100%' height='100%' />
+                    <img onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
                     <motion.div ref={mobiletab1} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
-                    <Link to='/aboutus' className='navbar-mobile-tab'>about</Link>
+                    <Link to='/aboutus'   style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}}  className='navbar-mobile-tab'>about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
+                    
                     </motion.div>
-                    <motion.div  ref={mobiletab2} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>services</motion.div>
-                    <motion.div  ref={mobiletab3}  whileHover={{scale : 1.2}} className='navbar-mobile-tab'>product</motion.div>
-                    <motion.div  ref={mobiletab4}  whileHover={{scale : 1.2}} className='navbar-mobile-tab'>contact</motion.div>
+                    <motion.div  ref={mobiletab2} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
+                    <Link to='/services'  style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}} className='navbar-mobile-tab'>services</Link>
+                    </motion.div>
+                    <motion.div  ref={mobiletab3}  whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
+                    <Link to='/product'  style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}} className='navbar-mobile-tab'>product</Link>
+                    </motion.div>
+                    <motion.div  ref={mobiletab4}  whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
+                    <Link to='/contact'  style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}} className='navbar-mobile-tab'>contact</Link>
+                    </motion.div>
                 </div>
                 <div className='navbar-right'>
-                    <motion.div whileHover={{scale : 1.2}} className='navbar-tab'>
-                    <Link to='/aboutus' className='navbar-tab'>about</Link>
+                    <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                        <Link to='/aboutus' onClick={() => onLinkClick('about')} style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'> about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
+
                     </motion.div>
-                    <motion.div whileHover={{scale : 1.2}} className='navbar-tab'>services</motion.div>
-                    <motion.div  whileHover={{scale : 1.2}} className='navbar-tab'>product</motion.div>
-                    <motion.div  whileHover={{scale : 1.2}} className='navbar-tab'>contact</motion.div>
-                    <div onClick={()=>setIsNavbarToggled(!isNavbarToggled)} ref={crossicon}  className='burger-menu'>
-                      {isNavbarToggled ? (<svg  width="50px" height="50px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="white"><path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="#FFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>):
-                      
-                      (<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 40 40" fill="none">
-                      <path d="M6.25 20H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M6.25 10H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M6.25 30H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>)}
+                    <motion.div onClick={() => onLinkClick('services')} whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                        <Link to='/services' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'>services  {activeLink === 'services' && <div className="red-dot"></div>}  </Link>
+
+                    </motion.div>
+                    <motion.div onClick={() => onLinkClick('product')} whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                        <Link to='/product' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'>product    {activeLink === 'product' && <div className="red-dot"></div>} </Link>
+
+                    </motion.div>
+                    <motion.div onClick={() => onLinkClick('contact')} whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                        <Link to='/contact' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'>contact    {activeLink === 'contact' && <div className="red-dot"></div>} </Link>
+
+                    </motion.div>
+                    <div onClick={() => setIsNavbarToggled(!isNavbarToggled)} ref={crossicon} className='burger-menu'>
+                        {isNavbarToggled ? (<svg width="50px" height="50px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="white"><path style={{ stroke: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="#FFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>) :
+
+                            (<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 40 40" fill="none">
+                                <path style={{ stroke: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} d="M6.25 20H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path style={{ stroke: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} d="M6.25 10H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path style={{ stroke: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} d="M6.25 30H33.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>)}
                     </div>
                 </div>
             </div>

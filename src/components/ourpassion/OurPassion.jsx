@@ -12,7 +12,7 @@ const OurPassion = () => {
             <div className='our-passion-content'>
 
                 <div className='our-passion-title'>
-                    Sustainable Lighting Solutions That Harness Innovation, Efficiency, and Environmental Responsibility for a Greener World
+                    Sustainable Lighting Solutions That Harness <br/> Innovation, Efficiency, and Environmental <br/> Responsibility for a Greener World
                 </div>
 
                 <div className='our-passion-info'>

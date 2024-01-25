@@ -78,7 +78,7 @@ const OurInfo = () => {
                     </div>
                     <div className='info-products-right'>
 
-                        <motion.div  whileHover={{scale:1.03}} className='info-product-item'>
+                        <div   className='info-product-item'>
 
                             <div className='info-product-title'>Engineering</div>
                             <div className='info-product-des'>Renowned software for professional lighting design in buildings. Offers accurate lighting calculations, energy analysis, and realistic visualizations.</div>
@@ -90,9 +90,9 @@ const OurInfo = () => {
                                 </svg>
                             </motion.div>
 
-                        </motion.div>
+                        </div>
 
-                        <motion.div  whileHover={{scale:1.03}} className='info-product-item'>
+                        <div className='info-product-item'>
                             <div className='info-product-title'>Supply</div>
                             <div className='info-product-des'>Project stage helps gauge lead times and potential rush options & meeting the desired delivery dates in line with the project requirement & meeting client expectation.</div>
                             <motion.div  whileHover={{scale:1.2}} className='explore-circle'>
@@ -102,7 +102,7 @@ const OurInfo = () => {
                                     <path d="M13.75 10H30V26.25" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </motion.div>
-                        </motion.div>
+                        </div>
 
                     </div>
                 </div>
