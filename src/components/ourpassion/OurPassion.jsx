@@ -1,11 +1,19 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import '../ourpassion/OurPassion.css';
 import carbonfoot from '/src/images/carbonfoot.svg';
 import Footer from '../footer/Footer';
 import {motion} from 'framer-motion'
+import ContactModale from '../contactmodal/ContactModale';
 
 
 const OurPassion = () => {
+
+   
+    
+    const openModale = () => {
+        document.getElementById("modalecontainer").style.display = 'flex';
+    }
+   
     return (
         <>
         <div className='our-passion-container'>
@@ -26,13 +34,14 @@ const OurPassion = () => {
 
                 <div className='join-us-content'>
                     <div className='join-us-text'>Join us on this journey of sustainable illumination!</div>
-                    <motion.div whileHover={{scale:1.04}} className='join-us-btn'>Contact us now</motion.div>
+                    <motion.div onClick={()=>openModale()} whileHover={{scale:1.04}} className='join-us-btn'>Contact us now</motion.div>
                 </div>
                 
             </div>
          
         
         </div>
+       <ContactModale />
        
         </>
     )

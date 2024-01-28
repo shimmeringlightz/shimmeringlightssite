@@ -11,6 +11,7 @@ import Services from './components/services/Services';
 import Product from './components/product/Product';
 import { useState } from 'react';
 
+
 function App() {
 
   const [activeLink, setActiveLink] = useState(null);
@@ -42,9 +43,12 @@ requestAnimationFrame(raf)
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />
           <Route path='/contact' Component={Product} />
+          
+         
         </Routes>
         <Footer activeLink={activeLink} onLinkClick={handleLinkClick} />
       </BrowserRouter>
+    
     </>
   )
 }

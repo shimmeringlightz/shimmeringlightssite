@@ -1,0 +1,147 @@
+.contact-modale-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    position:  fixed;
+    top: 0;
+    z-index: 100;
+ 
+    justify-content: center;
+    align-items: center;
+    
+}
+#modalecontainer{
+    display: none;
+}
+
+
+.contact-modale-content{
+    background-color: white;
+    opacity: 6;
+    width: 100%;
+    max-width: 600px;
+  padding: 40px 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+
+    
+    color: #101828;
+font-family: Montserrat;
+
+
+}
+.close-contact-modale{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    transform: translate(-20px,10px);
+    cursor: pointer;
+}
+.contact-msg-title{
+    font-size: 36px;
+font-style: normal;
+font-weight: 500;
+}
+.contact-msg-btn{
+    cursor: pointer;
+}
+.contact-msg-name ,.contact-msg-email{
+    width: 100%;
+    max-width: 500px;
+    height: 34px;
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid rgb(174 174 174);
+    border-radius: 12px;
+}
+.contact-msg-btn{
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+.contact-msg-detail{
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 18px;
+}
+textarea{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    border: 1px solid rgb(174 174 174);
+    border-radius: 12px;
+}
+input:focus , textarea:focus{
+    outline: none;
+   
+}
+.contact-input-wrapper{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.contact-input-subtext{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media screen and (max-width : 850px) and (min-width : 0px) {
+    .contact-modale-content{
+       
+        max-width: 400px;
+      padding: 40px 20px;
+     
+    
+    
+    }
+}
+@media screen and (max-width : 550px) and (min-width : 0px) {
+    .contact-modale-content{
+       
+        max-width: 400px;
+      padding: 40px 20px;
+     
+    
+    
+    }
+    .contact-msg-title{
+        font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    }
+}
+@media screen and (max-width : 350px) and (min-width : 0px) {
+    .contact-modale-content{
+       
+        max-width: 270px;
+      padding: 40px 20px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        position: relative;
+    
+        
+        color: #101828;
+    font-family: Montserrat;
+    
+    
+    }
+}

@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const Home = () => {
 
   const animation = {
@@ -57,6 +58,7 @@ const Home = () => {
     <OurPassion/>
    
     </div>
+
     {/* <Footer/> */}
     </>
   )
