@@ -1,6 +1,6 @@
 import React,{useRef} from 'react';
 import '../ourinfo/OurInfo.css';
-import demo from '/src/images/lamp.svg';
+import homedesign from '/src/images/homedesign.svg';
 import {motion} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useScroll } from 'framer-motion';
@@ -53,24 +53,25 @@ const OurInfo = () => {
 
                                 <div className='svg-container'>
                     
-                                            <img className='immo' src={demo} x="0" y="0" width="516" height="360" />
+                                            {/* <img className='immo' src={homedesign} x="0" y="0"/> */}
 
-                                    <div className='design-intro-title'>
-                                      <div>  Design</div>
-                                    </div>
+                                    
 
-                                    <div className='explore-design-circle'>
+                                    <motion.div whileHover={{scale:1.2}} className='explore-design-circle'>
                                         <svg className='explore-arrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                             <path d="M10 30L30 10" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M10 30L30 10" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M13.75 10H30V26.25" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                    </div>
+                                    </motion.div>
 
                                 </div>
                               
 
                             </div>
+                            <div className='design-intro-title'>
+                                      <div>  Design</div>
+                                    </div>
                             <div className='design-product-des'>
                                 Primary guideline for lighting professionals, architects, and engineers, ensuring optimal lighting conditions for occupants while adhering to energy efficiency and sustainability principles.
                             </div>
