@@ -126,10 +126,9 @@ input:focus , textarea:focus{
     }
 }
 @media screen and (max-width : 350px) and (min-width : 0px) {
-    .contact-modale-content{
-       
+    .contact-modale-content {
         max-width: 270px;
-      padding: 40px 20px;
+        padding: 40px 20px;
         border-radius: 30px;
         display: flex;
         flex-direction: column;
@@ -137,11 +136,7 @@ input:focus , textarea:focus{
         align-items: center;
         gap: 28px;
         position: relative;
-    
-        
         color: #101828;
-    font-family: Montserrat;
-    
-    
+        font-family: Montserrat;
     }
 }

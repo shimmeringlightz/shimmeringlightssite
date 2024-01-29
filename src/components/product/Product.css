@@ -19,7 +19,7 @@
 }
 
 .services-banner {
-    /* background-color: antiquewhite; */
+    background-color: antiquewhite;
 
     height: 30vh;
     background-image: url(/src/images/bannerimage.svg);
@@ -111,6 +111,11 @@ line-height: 150%; /* 27px */
            
            
          
+    }
+    .product-sec-box{
+        width: 100%;
+   
+     
     }
 }
 @media screen and (max-width:900px) and (min-width:0px) {
