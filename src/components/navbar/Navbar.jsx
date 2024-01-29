@@ -102,6 +102,7 @@ const Navbar = ({ activeLink, onLinkClick }) => {
             <div  ref={navbarcontent}  className='navbar-content'>
                 <div ref={navbarleft} className='navbar-left'>
                     <img onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
+                    
                     <motion.div ref={mobiletab1} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
                     <Link to='/aboutus'   style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}}  className='navbar-mobile-tab'>about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
                     
@@ -117,6 +118,10 @@ const Navbar = ({ activeLink, onLinkClick }) => {
                     </motion.div>
                 </div>
                 <div className='navbar-right'>
+                <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                        <Link to='/' onClick={() => onLinkClick('home')} style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'> home {activeLink === 'home' && <div className="red-dot"></div>} </Link>
+
+                    </motion.div>
                     <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
                         <Link to='/aboutus' onClick={() => onLinkClick('about')} style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'> about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
 

@@ -6,32 +6,40 @@ import Home from './pages/home/Home';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Lenis from '@studio-freight/lenis';
-import AboutUs from './components/aboutus/AboutUs'
+import AboutUs from './components/aboutus/AboutUs';
 import Services from './components/services/Services';
 import Product from './components/product/Product';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 
 function App() {
-
   const [activeLink, setActiveLink] = useState(null);
+
+  useEffect(() => {
+    // Retrieve active link from localStorage when component mounts
+    const storedActiveLink = localStorage.getItem('activeLink');
+    if (storedActiveLink) {
+      setActiveLink(storedActiveLink);
+    }
+  }, []);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    // Store active link in localStorage
+    localStorage.setItem('activeLink', link);
   };
 
-  const lenis = new Lenis()
+  const lenis = new Lenis();
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
+  lenis.on('scroll', (e) => {
+    console.log(e);
+  });
 
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
 
-requestAnimationFrame(raf)
+  requestAnimationFrame(raf);
 
   return (
     <>
@@ -43,14 +51,11 @@ requestAnimationFrame(raf)
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />
           <Route path='/contact' Component={Product} />
-          
-         
         </Routes>
         <Footer activeLink={activeLink} onLinkClick={handleLinkClick} />
       </BrowserRouter>
-    
     </>
-  )
+  );
 }
 
-export default App
+export default App;
