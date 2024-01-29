@@ -15,6 +15,7 @@ const Navbar = ({ activeLink, onLinkClick }) => {
    
 
     const redirecttohome = () =>{
+        onLinkClick('home')
         window.location.href = '/';
     }
 
@@ -101,7 +102,7 @@ const Navbar = ({ activeLink, onLinkClick }) => {
         <motion.div style={{ backgroundColor : scrollY > 0.2 * window.innerHeight ? 'white':'rgba(0, 0, 0, 0.10)'}} ref={navbarspace} variants={animation} initial="initial" animate={inView ? "enter" : ""} className='navbar-space'>
             <div  ref={navbarcontent}  className='navbar-content'>
                 <div ref={navbarleft} className='navbar-left'>
-                    <img onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
+                    <img  onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
                     
                     <motion.div ref={mobiletab1} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
                     <Link to='/aboutus'   style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}}  className='navbar-mobile-tab'>about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
