@@ -31,3 +31,127 @@
     align-items: center;
 
 }
+.product-section-wrapper{
+    /* background-color: rgb(184, 184, 184); */
+    width: 100%;
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.product-sec-box{
+    /* background-color: rgb(217, 217, 217); */
+    width: 48%;
+ 
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.product-sec-image {
+    width: 100%;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product-cover-img{
+    width: 100%;
+}
+.product-sec-more{
+    /* background-color: rgb(211, 255, 255); */
+    background-color: #FBFAFA;;
+    width: 100%;
+display: flex;
+flex-direction: column;
+gap: 12px;
+    padding: 32px;
+}
+.product-sec-title{
+    color: var(--Gray-900, #101828);
+font-family: Montserrat;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: 60px; /* 187.5% */
+letter-spacing: -0.64px;
+}
+.product-sec-description{
+    color: var(--Gray-500, #667085);
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+}
+.product-sec-knowmore {
+    border-radius: 12px;
+    background: #EF4344;
+    padding: 12px 20px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    width: 150px;
+    cursor: pointer;
+}
+@media screen and (max-width:1045px) and (min-width:0px) {
+    .services-detail-container{
+        /* background-color: rgb(210, 195, 176); */
+         /* background-color: aqua; */
+         width: 100%;
+         height: 100%;
+         justify-content: space-between;
+             display: flex;
+           
+           
+         
+    }
+}
+@media screen and (max-width:900px) and (min-width:0px) {
+    .product-sec-box{
+        width: 100%;
+   
+     
+    }
+    .product-sec-knowmore {
+        border-radius: 12px;
+        background: #EF4344;
+        padding: 10px 10px;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        text-align: center;
+        font-weight: 500;
+        line-height: 24px;
+        /* 150% */
+        width: 120px;
+        cursor: pointer;
+    }
+    .services-detail-container{
+      
+             padding: 80px 20px;
+           
+         
+    }
+    
+}
+@media screen and (max-width:550px) and (min-width:0px) {
+    .services-detail-container {
+     
+        padding: 20px 20px;
+    }
+    .product-sec-title {
+       
+        line-height: 40px;
+    
+    }
+}
+
+
