@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const Home = () => {
+const Home = ({onLinkClick}) => {
 
   const animation = {
     initial: { y: '100%' },
@@ -43,7 +43,7 @@ const Home = () => {
               </div>
 
             <div className='home-description'>a world where lighting is an art form, a story telling <br className='gaps'/> medium, and a key player in sustainable design.</div>
-            <Link to='product' className='explore-product-link'>
+            <Link to='product' onClick={()=>onLinkClick('product')}  className='explore-product-link'>
             <motion.div whileHover={{scale:1.1}} className='home-explore-btn'>
             Explore Products
               </motion.div>

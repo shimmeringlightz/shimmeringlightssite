@@ -46,7 +46,7 @@ function App() {
       <BrowserRouter>
         <Navbar activeLink={activeLink} onLinkClick={handleLinkClick} />
         <Routes>
-          <Route path='/' Component={Home} />
+          <Route path='/' element={<Home activeLink={activeLink}  onLinkClick={handleLinkClick}/>} />
           <Route path='/aboutus' Component={AboutUs} />
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />
