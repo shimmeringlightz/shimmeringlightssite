@@ -108,9 +108,9 @@ const Navbar = ({ activeLink, onLinkClick }) => {
                 </div>
                 <div className='navbar-right'>
 
-                    {/* <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
+                    <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
                         <Link to='/' onClick={() => onLinkClick('home')} style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'> home {activeLink === 'home' && <div className="red-dot"></div>} </Link>
-                    </motion.div> */}
+                    </motion.div>
 
                     <motion.div whileHover={{ scale: 1.2 }} className='navbar-tab'>
                         <Link to='/aboutus' onClick={() => onLinkClick('about')} style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-tab'> about {activeLink === 'about' && <div className="red-dot"></div>} </Link>

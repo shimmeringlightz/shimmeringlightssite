@@ -14,24 +14,26 @@ import { useState, useEffect } from 'react';
 function App() {
   
   const [activeLink, setActiveLink] = useState(null);
-
-  useEffect(() => {
-    // Clear the active link when the component mounts
-    localStorage.removeItem('activeLink');
-   
-    const storedActiveLink = localStorage.getItem('activeLink');
-    if (storedActiveLink) {
-      setActiveLink(storedActiveLink);
-    }
-  }, []);
-  
   
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
     // Store active link in localStorage
-    localStorage.setItem('activeLink', link);
+    sessionStorage.setItem('activeLink', link);
   };
+
+  useEffect(() => {
+    // Clear the active link when the component mounts
+ 
+   
+    const storedActiveLink = sessionStorage.getItem('activeLink');
+    if (storedActiveLink  || activeLink) {
+      setActiveLink(storedActiveLink);
+    }else{
+      setActiveLink('home');
+    }
+  }, []);
+  
 
   const lenis = new Lenis();
 
