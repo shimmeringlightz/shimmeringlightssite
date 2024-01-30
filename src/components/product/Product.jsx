@@ -3,7 +3,7 @@ import '../product/Product.css';
 import {motion} from 'framer-motion';
 import indoor from '/src/images/indoor.svg';
 import outdoor from '/src/images/outdoor.svg';
-import roadlights from '/src/images/roadlights.svg';
+import roadlights from '/src/images/roadlights.jpg';
 import valueengineer from '/src/images/valueengineer.svg';
 
 const Product = () => {
