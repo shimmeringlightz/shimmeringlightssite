@@ -7,7 +7,6 @@ const ContactModale = () => {
 
     const closeModale = () => {
         document.getElementById("modalecontainer").style.display = 'none';
-        // Clear the form when the modal is closed
         setFormState({ name: '', email: '', message: '' });
     };
 
@@ -19,11 +18,11 @@ const ContactModale = () => {
         emailjs.send('service_jl2tinc', 'template_0scbd9l', formState, '0fyyCkU6Ci1GObofE')
             .then((result) => {
                 console.log(result.text);
-                closeModale();
             })
             .catch((error) => {
                 console.log(error.text);
             });
+            closeModale();
     };
 
     return (
