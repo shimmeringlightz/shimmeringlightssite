@@ -15,16 +15,15 @@ function App() {
   const [activeLink, setActiveLink] = useState(null);
 
   useEffect(() => {
+    // Clear the active link when the component mounts
+    localStorage.removeItem('activeLink');
+   
     const storedActiveLink = localStorage.getItem('activeLink');
     if (storedActiveLink) {
       setActiveLink(storedActiveLink);
     }
-  
-    return () => {
-      // Clear the active link from localStorage when the component unmounts
-      localStorage.removeItem('activeLink');
-    };
   }, []);
+  
   
 
   const handleLinkClick = (link) => {
