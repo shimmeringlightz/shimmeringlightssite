@@ -22,7 +22,7 @@ const ContactModale = () => {
             .catch((error) => {
                 console.log(error.text);
             });
-            closeModale();
+        closeModale();
     };
 
     return (
