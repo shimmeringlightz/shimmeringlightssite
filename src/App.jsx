@@ -12,6 +12,7 @@ import Product from './components/product/Product';
 import { useState, useEffect } from 'react';
 
 function App() {
+  
   const [activeLink, setActiveLink] = useState(null);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ function App() {
       <BrowserRouter>
         <Navbar activeLink={activeLink} onLinkClick={handleLinkClick} />
         <Routes>
-          <Route path='/' element={<Home activeLink={activeLink}  onLinkClick={handleLinkClick}/>} />
+          <Route path='/' element={<Home activeLink={activeLink} onLinkClick={handleLinkClick}/>} />
           <Route path='/aboutus' Component={AboutUs} />
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />

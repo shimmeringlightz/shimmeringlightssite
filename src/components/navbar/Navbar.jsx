@@ -12,30 +12,21 @@ const Navbar = ({ activeLink, onLinkClick }) => {
 
     const [scrollY, setScrollY] = useState(0);
   
-   
-
     const redirecttohome = () =>{
         onLinkClick('home')
         window.location.href = '/';
     }
 
-   
-
-    useEffect(()=>{
-
+    useEffect(() => {
         const handleScroll = () => {
             setScrollY(window.scrollY)
         }
-
-        window.addEventListener('scroll',handleScroll)
-
+        window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener('scroll',handleScroll)
+            window.removeEventListener('scroll', handleScroll)
         };
-
-    },[])
+    }, [])
   
-
     const[isNavbarToggled,setIsNavbarToggled] = useState(false)
     const navbarspace = useRef(null)
     const navbarcontent = useRef(null)
@@ -48,9 +39,6 @@ const Navbar = ({ activeLink, onLinkClick }) => {
     const crossicon = useRef(null)
     
     useEffect(() => {
-
-       
-
         if (isNavbarToggled) {
             console.log('toggled')
             navbarspace.current.style.height = '60vh';
@@ -103,7 +91,7 @@ const Navbar = ({ activeLink, onLinkClick }) => {
             <div  ref={navbarcontent}  className='navbar-content'>
                 <div ref={navbarleft} className='navbar-left'>
                     <img  onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
-                    
+
                     <motion.div ref={mobiletab1} whileHover={{scale : 1.2}} className='navbar-mobile-tab'>
                     <Link to='/aboutus'   style={{ color : scrollY > 0.2 * window.innerHeight ? 'black':'white'}}  className='navbar-mobile-tab'>about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
                     
