@@ -7,7 +7,7 @@
 
     position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 2000;
     backdrop-filter: blur(10px);
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     /* background-color: rgb(0, 0, 0); */

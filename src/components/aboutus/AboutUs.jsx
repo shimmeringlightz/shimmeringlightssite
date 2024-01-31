@@ -1,10 +1,77 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import '../aboutus/AboutUs.css';
 import aboutimage from '/src/images/aboutimage.svg';
+import gsap from 'gsap';
 
 const AboutUs = () => {
+
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
+
+  useEffect(() => {
+    const cursor = document.querySelector('.cursor');
+    const cursorScale = document.querySelectorAll('.faderedball');
+    
+   
+
+    gsap.to({}, 0.016, {
+      repeat: -1,
+      onRepeat: function () {
+        gsap.set(cursor, {
+          left: mouseX,
+          top: mouseY
+        });
+      }
+    });
+
+    cursorScale.forEach(link=>{
+      link.addEventListener('mouseleave',()=>{
+        cursor.classList.remove('aboutgrow');
+        cursor.classList.remove('aboutgrow-small');
+      })
+      link.addEventListener('mousemove',()=>{
+        cursor.classList.add('aboutgrow');
+
+        if(link.classList.contains('small')){
+          cursor.classList.remove('aboutgrow');
+          cursor.classList.add('aboutgrow-small');
+        }
+        
+      })
+    })
+
+    return () => {
+      // Cleanup GSAP animation
+    };
+
+
+    
+  }, [mouseX, mouseY]);
+
+  useEffect(() => {
+
+   
+
+    const handleMouseMove = (e) => {
+      setMouseX(e.clientX);
+      setMouseY(e.clientY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+  
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+
+
+  }, []);
+
+
   return (
     <div className='aboutus-container'>
+        <div className="cursor"></div>
         <div className='aboutus-content'>
             <div className='about-us-banner'>
            <div className='about-us-text'>About Us</div>
@@ -15,7 +82,7 @@ const AboutUs = () => {
           </div>
           <div className='aboutus-sec-left'>
             <div className='aboutus-left-title'>Our Story</div>
-            <div className='aboutus-left-description'>
+            <div className='aboutus-left-description faderedball'>
               Shimmering Lights is born from – a world where lighting is an art form, a storytelling medium, and a key player in sustainable design. Shimmering Lights inspired from nature where we embrace prime consideration to sustainability in the course of the design and material selection process.
               <br /><br />Providing uniform, well-balanced illumination. Aspects of the building architecture and the interior design, who believe that illumination is more than just bulbs and circuits. It's about evoking emotions, creating atmosphere, and guiding the eye like a skilled storyteller.
 

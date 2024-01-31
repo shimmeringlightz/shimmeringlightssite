@@ -1,14 +1,81 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import '../product/Product.css';
 import {motion} from 'framer-motion';
 import indoor from '/src/images/indoor.svg';
 import outdoor from '/src/images/outdoor.svg';
 import roadlights from '/src/images/roadlights.jpg';
 import valueengineer from '/src/images/valueengineer.svg';
+import gsap from 'gsap';
 
 const Product = () => {
+
+    const [mouseX, setMouseX] = useState(0);
+    const [mouseY, setMouseY] = useState(0);
+  
+    useEffect(() => {
+      const cursor = document.querySelector('.cursor');
+      const cursorScale = document.querySelectorAll('.faderedball');
+      
+     
+  
+      gsap.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+          gsap.set(cursor, {
+            left: mouseX,
+            top: mouseY
+          });
+        }
+      });
+  
+      cursorScale.forEach(link=>{
+        link.addEventListener('mouseleave',()=>{
+          cursor.classList.remove('aboutgrow');
+          cursor.classList.remove('aboutgrow-small');
+        })
+        link.addEventListener('mousemove',()=>{
+          cursor.classList.add('aboutgrow');
+  
+          if(link.classList.contains('small')){
+            cursor.classList.remove('aboutgrow');
+            cursor.classList.add('aboutgrow-small');
+          }
+          
+        })
+      })
+  
+      return () => {
+        // Cleanup GSAP animation
+      };
+  
+  
+      
+    }, [mouseX, mouseY]);
+  
+    useEffect(() => {
+  
+     
+  
+      const handleMouseMove = (e) => {
+        setMouseX(e.clientX);
+        setMouseY(e.clientY);
+      };
+  
+      window.addEventListener('mousemove', handleMouseMove);
+  
+    
+  
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
+  
+  
+    }, []);
+
+
   return (
     <div className='services-container'>
+            <div className="cursor"></div>
             <div className='services-content'>
                 <div className='services-banner'>
                     <div className='services-text'>Product</div>
@@ -21,7 +88,7 @@ const Product = () => {
                       <div className='info-serviceline-box'>
                           <motion.div className='service-line'></motion.div>
                       </div>
-                      <div className='services-detail-description'>Discover brilliance in every detail with our curated collection of lighting products. From elegant indoor fixtures to robust streetlight solutions, Shimmering Lights presents a spectrum of quality luminaires designed to elevate your spaces.</div>
+                      <div className='services-detail-description faderedball'>Discover brilliance in every detail with our curated collection of lighting products. From elegant indoor fixtures to robust streetlight solutions, Shimmering Lights presents a spectrum of quality luminaires designed to elevate your spaces.</div>
                   </div>
 
                   <div className='product-section-wrapper'>

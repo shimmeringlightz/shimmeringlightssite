@@ -1,16 +1,81 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import '../services/Services.css';
 import aboutimage from '/src/images/aboutimage.svg';
 import { useScroll,motion } from 'framer-motion';
+import gsap from 'gsap';
 
 
 const Services = () => {
 
     const { scrollYProgress } = useScroll()
 
+    const [mouseX, setMouseX] = useState(0);
+    const [mouseY, setMouseY] = useState(0);
+  
+    useEffect(() => {
+      const cursor = document.querySelector('.cursor');
+      const cursorScale = document.querySelectorAll('.faderedball');
+      
+     
+  
+      gsap.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+          gsap.set(cursor, {
+            left: mouseX,
+            top: mouseY
+          });
+        }
+      });
+  
+      cursorScale.forEach(link=>{
+        link.addEventListener('mouseleave',()=>{
+          cursor.classList.remove('aboutgrow');
+          cursor.classList.remove('aboutgrow-small');
+        })
+        link.addEventListener('mousemove',()=>{
+          cursor.classList.add('aboutgrow');
+  
+          if(link.classList.contains('small')){
+            cursor.classList.remove('aboutgrow');
+            cursor.classList.add('aboutgrow-small');
+          }
+          
+        })
+      })
+  
+      return () => {
+        // Cleanup GSAP animation
+      };
+  
+  
+      
+    }, [mouseX, mouseY]);
+  
+    useEffect(() => {
+  
+     
+  
+      const handleMouseMove = (e) => {
+        setMouseX(e.clientX);
+        setMouseY(e.clientY);
+      };
+  
+      window.addEventListener('mousemove', handleMouseMove);
+  
+    
+  
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
+  
+  
+    }, []);
+
 
     return (
         <div className='services-container'>
+            <div className="cursor"></div>
             <div className='services-content'>
                 <div className='services-banner'>
                     <div className='services-text'>Services</div>
@@ -32,7 +97,7 @@ const Services = () => {
 
                         <div className='services-detail-right'>
                             <div className='services-detail-title'>Design</div>
-                            <div className='service-detail-description'>Primary guideline for lighting professionals, architects, and engineers, ensuring
+                            <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
                                 optimal lighting conditions for occupants while adhering to energy efficiency
                                 and sustainability principles. Well-balanced luminance distribution the luminance of all surfaces shall be taken into consideration. The lighting designer shall consider and select the appropriate reflectance and illuminance values for the interior surfaces.</div>
                                 <motion.div whileHover={{scale:1.04}} className='enquiry-now'>Enquiry Now</motion.div>
@@ -47,7 +112,7 @@ const Services = () => {
 
                         <div className='services-detail-right box-a'>
                             <div className='services-detail-title '>Engineering </div>
-                            <div className='service-detail-description '>Renowned software for professional lighting design in buildings. Offers accurate
+                            <div className='service-detail-description faderedball'>Renowned software for professional lighting design in buildings. Offers accurate
                                 lighting calculations, energy analysis, and realistic visualizations. Ideal for
                                 architects, engineers, and lighting designers focused on real-world applications.
                                 Rationale communication & understand the project requirements, Identify the
@@ -68,7 +133,7 @@ const Services = () => {
 
                         <div className='services-detail-right'>
                             <div className='services-detail-title'>Supply</div>
-                            <div className='service-detail-description'>Primary guideline for lighting professionals, architects, and engineers, ensuring
+                            <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
                                 optimal lighting conditions for occupants while adhering to energy efficiency
                                 and sustainability principles. Well-balanced luminance distribution the luminance of all surfaces shall be taken into consideration. The lighting designer shall consider and select the appropriate reflectance and illuminance values for the interior surfaces.</div>
                             <motion.div whileHover={{scale:1.04}} className='enquiry-now'>Enquiry Now</motion.div>

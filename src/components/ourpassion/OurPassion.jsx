@@ -27,7 +27,7 @@ const OurPassion = () => {
                     <div className='our-passion-image'>
                         <img src={carbonfoot} width='100%' height='100%'/>
                     </div>
-                    <div className='our-passion-description'>
+                    <div className='our-passion-description faderedball'>
                         Our passion for lighting design is matched by our commitment to creating a more sustainable future, this dedicated section delves into how we integrate eco-friendliness into every facet of our operations. Prioritize to offer sustainable and recycled materials in our fixtures. Embrace LED technology, strategic placement of windows & skylights, Introducing smart lighting. This translates to lower carbon emissions, reduces our environmental footprint and reduced energy bills for our clients – a win-win for the planet and your wallet.
                     </div>
                 </div>

@@ -37,7 +37,7 @@ const OurInfo = () => {
     return (
         <div  className='our-info-container'>
             <div ref={ref}  className='our-info-contents'>
-                <motion.div  variants={animation} initial="initial" animate={inView ? "enter" : ""}   className='info-title'>Transformative Lighting Solutions, Illuminating Every Space with Timeless Elegance</motion.div>
+                <motion.div  variants={animation} initial="initial" animate={inView ? "enter" : ""}   className='info-title '>Transformative Lighting Solutions, Illuminating Every Space with Timeless Elegance</motion.div>
 
                 <div className='info-wrapper-box'>
                 <div className='info-line-box'>
@@ -69,10 +69,10 @@ const OurInfo = () => {
                               
 
                             </div>
-                            <div className='design-intro-title'>
+                            <div className='design-intro-title faderedball'>
                                       <div>  Design</div>
                                     </div>
-                            <div className='design-product-des'>
+                            <div className='design-product-des faderedball'>
                                 Primary guideline for lighting professionals, architects, and engineers, ensuring optimal lighting conditions for occupants while adhering to energy efficiency and sustainability principles.
                             </div>
                         </div>
@@ -81,8 +81,8 @@ const OurInfo = () => {
 
                         <div   className='info-product-item'>
 
-                            <div className='info-product-title'>Engineering</div>
-                            <div className='info-product-des'>Renowned software for professional lighting design in buildings. Offers accurate lighting calculations, energy analysis, and realistic visualizations.</div>
+                            <div className='info-product-title faderedball'>Engineering</div>
+                            <div className='info-product-des faderedball'>Renowned software for professional lighting design in buildings. Offers accurate lighting calculations, energy analysis, and realistic visualizations.</div>
                             <motion.div whileHover={{scale:1.2}} className='explore-circle'>
                                 <svg  className='explore-arrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                     <path d="M10 30L30 10" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -94,8 +94,8 @@ const OurInfo = () => {
                         </div>
 
                         <div className='info-product-item'>
-                            <div className='info-product-title'>Supply</div>
-                            <div className='info-product-des'>Project stage helps gauge lead times and potential rush options & meeting the desired delivery dates in line with the project requirement & meeting client expectation.</div>
+                            <div className='info-product-title faderedball'>Supply</div>
+                            <div className='info-product-des faderedball'>Project stage helps gauge lead times and potential rush options & meeting the desired delivery dates in line with the project requirement & meeting client expectation.</div>
                             <motion.div  whileHover={{scale:1.2}} className='explore-circle'>
                                 <svg className='explore-arrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                     <path d="M10 30L30 10" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
