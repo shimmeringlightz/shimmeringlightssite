@@ -22,64 +22,59 @@ const Home = ({ onLinkClick }) => {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
 
+  
+
   useEffect(() => {
     const cursor = document.querySelector('.cursor');
     const cursorScale = document.querySelectorAll('.faderedball');
-    
-   
-
-    gsap.to({}, 0.016, {
-      repeat: -1,
-      onRepeat: function () {
-        gsap.set(cursor, {
-          left: mouseX,
-          top: mouseY
-        });
-      }
-    });
-
-    cursorScale.forEach(link=>{
-      link.addEventListener('mouseleave',()=>{
+  
+    let currentX = 0;
+    let currentY = 0;
+    let aimX = 0;
+    let aimY = 0;
+  
+    const smoothMovement = () => {
+      const diffX = aimX - currentX;
+      const diffY = aimY - currentY;
+  
+      currentX += diffX * 0.1;
+      currentY += diffY * 0.1;
+  
+      gsap.set(cursor, {
+        left: currentX, // Adjust as needed
+        top: currentY, // Adjust as needed
+      });
+  
+      requestAnimationFrame(smoothMovement);
+    };
+  
+    smoothMovement();
+  
+    const handleMouseMove = (e) => {
+      aimX = e.clientX;
+      aimY = e.clientY;
+    };
+  
+    window.addEventListener('mousemove', handleMouseMove);
+  
+    cursorScale.forEach((link) => {
+      link.addEventListener('mouseleave', () => {
         cursor.classList.remove('grow');
         cursor.classList.remove('grow-small');
-      })
-      link.addEventListener('mousemove',()=>{
+      });
+      link.addEventListener('mousemove', () => {
         cursor.classList.add('grow');
-
-        if(link.classList.contains('small')){
+  
+        if (link.classList.contains('small')) {
           cursor.classList.remove('grow');
           cursor.classList.add('grow-small');
         }
-        
-      })
-    })
-
-    return () => {
-      // Cleanup GSAP animation
-    };
-
-
-    
-  }, [mouseX, mouseY]);
-
-  useEffect(() => {
-
-   
-
-    const handleMouseMove = (e) => {
-      setMouseX(e.clientX);
-      setMouseY(e.clientY);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
+      });
+    });
   
-
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-
-
   }, []);
 
   

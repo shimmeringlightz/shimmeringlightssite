@@ -10,35 +10,39 @@
  }
  .cursor{
    position: fixed;
-   width: 40px;
-   height: 40px;
+   width: 10px;
+   height: 10px;
    margin-left: -px;
    margin-top: -20px;
    border-radius: 50%;
    border: 2px solid #ff0303;
+   background: #ff0303;
    transition: transform .2s ease;
    transform-origin: center center;
    pointer-events: none;
    z-index: 1000;
  }
-.grow,.grow-small{
-   transform: scale(3);
+.grow,
+.grow-small {
+   transform: scale(10);
    background: rgb(255, 255, 255);
-   mix-blend-mode:difference;
+   mix-blend-mode: difference;
    border: none;
-   
 }
-.aboutgrow,.aboutgrow-small{
-   transform: scale(2.6);
-   background: #000000;;
-   mix-blend-mode:difference;
+
+.aboutgrow,
+.aboutgrow-small {
+   transform: scale(10);
+   background: #000000;
+   mix-blend-mode: difference;
    border: none;
-   
 }
-.grow-small{
+
+.grow-small {
    transform: scale(2.5);
 }
-.elevate{
+
+.elevate {
    color: red;
    font-size: 44px;
 }
