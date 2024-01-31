@@ -49,3 +49,16 @@
    font-size: 44px;
 }
 
+@media screen and (max-width:900px) and (min-width:0px) {
+   .cursor {
+      display: none;
+   }
+   .grow,
+   .grow-small {
+      display: none;
+   }
+   .aboutgrow,
+   .aboutgrow-small {
+      display: none;
+   }
+}
