@@ -15,7 +15,7 @@
    margin-left: -px;
    margin-top: -20px;
    border-radius: 50%;
-   border: 2px solid #ff030300;
+   border: 2px solid #ff0303;
    transition: transform .2s ease;
    transform-origin: center center;
    pointer-events: none;
