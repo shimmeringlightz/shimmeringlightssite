@@ -5,9 +5,6 @@ import gsap from 'gsap';
 
 const AboutUs = () => {
 
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
-
   useEffect(() => {
     const cursor = document.querySelector('.cursor');
     const cursorScale = document.querySelectorAll('.faderedball');
@@ -61,15 +58,13 @@ const AboutUs = () => {
     };
   }, []);
 
-
-
   return (
     <div className='aboutus-container'>
-        <div className="cursor"></div>
-        <div className='aboutus-content'>
-            <div className='about-us-banner'>
-           <div className='about-us-text'>About Us</div>
-            </div>
+      <div className="cursor"></div>
+      <div className='aboutus-content'>
+        <div className='about-us-banner'>
+          <div className='about-us-text'>About Us</div>
+        </div>
         <div className='about-us-section'>
           <div className='aboutus-sec-right'>
             <img className='aboutimage' src={aboutimage} width='70%' height='70%' />
@@ -84,7 +79,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   )
 }
