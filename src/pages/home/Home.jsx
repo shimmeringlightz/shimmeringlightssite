@@ -92,10 +92,10 @@ const Home = ({ onLinkClick }) => {
 
               <div ref={ref} className='home-titles'>
                 <div className='home-title-1'>
-                  <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title faderedball '>Brightening Spaces</motion.div>
+                  <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title'>Brightening Spaces</motion.div>
                 </div>
                 <br className='gaps' />
-                <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title faderedball'> Creating Moments</motion.div>
+                <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title'> Creating Moments</motion.div>
               </div>
 
               <div className='home-description small'>a world where lighting is an art form, a story telling <br className='gaps' /> medium, and a key player in sustainable design.</div>
