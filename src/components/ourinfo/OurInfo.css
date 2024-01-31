@@ -268,7 +268,7 @@ height: 100%;
  
 }
 .info-product-item{
-    padding: 10%;
+    padding: 7%;
 }
 .our-info-container{
    
@@ -350,7 +350,10 @@ bottom: -42px;
             font-size: 38px;
             line-height: 56px;
         }
-        
+        .design-intro-title{
+           margin-top: 4px;
+           margin-bottom: 0px;
+           }
         
     
       }
