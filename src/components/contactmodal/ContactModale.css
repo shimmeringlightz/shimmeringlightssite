@@ -51,6 +51,7 @@ font-weight: 500;
 }
 .contact-msg-btn{
     cursor: pointer;
+    border-radius: 12px;
 }
 .contact-msg-name ,.contact-msg-email{
     width: 100%;
