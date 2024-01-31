@@ -187,7 +187,9 @@ line-height: 24px; /* 150% */
                                         flex-direction: row;
                                        }
                                        .footer-contacts-left{
-                                        padding: 40px;
+                                        padding: 40px 0px;
+                                        display: flex;
+                                        justify-content: flex-start;
                                        }
                                        .footer-contacts{
                                        
