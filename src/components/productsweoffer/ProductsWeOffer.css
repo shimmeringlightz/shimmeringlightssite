@@ -31,10 +31,10 @@
 }
 .products-weoffer-box{
     width: 100%;
-    max-width: 670px;
+    max-width: 570px;
     
     flex: 0 1 calc(100% - 20px);
-    height: 400px;
+    height: 350px;
     padding: 50px;
     background-color: rgb(177, 177, 177);
     border-radius: 40px;
@@ -90,6 +90,9 @@ align-items: center;
 .info-lines{
     width: 50%;
     border: 2px solid red;
+}
+.infodes{
+    width: 80%;
 }
 
 @media (max-width: 1500px) and (min-width : 1405px){

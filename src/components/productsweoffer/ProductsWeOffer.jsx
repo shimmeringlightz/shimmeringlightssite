@@ -14,7 +14,7 @@ const ProductsWeOffer = () => {
               <div className='info-line-box'>
                   <motion.div style={{ scaleX: scrollYProgress  }} className='info-lines'></motion.div>
               </div>
-              <div className='info-description'>Providing uniform, well-balanced illumination. Aspects of the building architecture and the interior design, who believe that illumination is more than just bulbs and circuits. It's about evoking emotions, creating atmosphere, and guiding the eye like a skilled storyteller.</div>
+              <div className='info-description infodes'>Providing uniform, well-balanced illumination. Aspects of the building architecture and the interior design, who believe that illumination is more than just bulbs and circuits. It's about evoking emotions, creating atmosphere, and guiding the eye like a skilled storyteller.</div>
               <div className='products-weoffer-section'>
 
                   <motion.div whileHover={{scale : 1.03}} className='products-weoffer-box interiorlights'>

@@ -176,7 +176,7 @@
 
     .our-passion-title {
         font-size: 34px;
-        line-height: 54px;
+        line-height: 44px;
         padding: 0px 20px;
     }
 }
@@ -203,6 +203,6 @@
 @media screen and (max-width : 900px) and (min-width : 0px) {
     .our-passion-content {
       
-        padding: 60px 0px 40px 0px;
+        padding: 20px 0px 40px 0px;
     }
 }

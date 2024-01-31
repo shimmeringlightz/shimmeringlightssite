@@ -32,7 +32,7 @@
 
 .info-products-left {
     /* background-color: #b3bcd0; */
-    width: 85%;
+    width: 100%;
 }
 
 .info-title {
@@ -50,7 +50,7 @@
 .info-line-box {
     /* background-color: rgb(122, 142, 159); */
     width: 100%;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +116,7 @@
 .svg-container {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: 280px;
     /* background-color: #667085; */
     border-radius: 20px;
     background: url(/src/images/homedesign.svg);
@@ -148,7 +148,7 @@
     display: flex;
     flex-direction: column;
 
-    /* gap: 8px; */
+    gap: 8px;
     cursor: pointer;
 }
 
@@ -286,8 +286,8 @@
     }
 
     .info-products-right {
-        padding: 0px 10px;
-        width: 90%;
+       
+     
         height: 100%;
 
     }
