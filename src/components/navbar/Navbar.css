@@ -59,7 +59,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: red;
+    background-color: #EF4344;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);

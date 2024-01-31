@@ -10,8 +10,8 @@
  }
  .cursor{
    position: fixed;
-   width: 10px;
-   height: 10px;
+   width: 8px;
+   height: 8px;
    margin-left: -px;
    margin-top: -20px;
    border-radius: 50%;
@@ -24,17 +24,19 @@
  }
 .grow,
 .grow-small {
-   transform: scale(10);
+   transform: scale(12);
    background: rgb(255, 255, 255);
    mix-blend-mode: difference;
    border: none;
+ 
 }
 
 .aboutgrow,
 .aboutgrow-small {
-   transform: scale(10);
+   transform: scale(12);
    background: #000000;
    mix-blend-mode: difference;
+
    border: none;
 }
 
@@ -46,3 +48,4 @@
    color: red;
    font-size: 44px;
 }
+
