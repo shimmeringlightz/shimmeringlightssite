@@ -42,7 +42,7 @@ const Navbar = ({ activeLink, onLinkClick }) => {
         if (isNavbarToggled) {
             console.log('toggled')
             navbarspace.current.style.height = '60vh';
-            navbarspace.current.style.backgroundColor = '50vh';
+            navbarspace.current.style.backgroundColor = 'rgb(98 9 9 / 38%)';
             navbarspace.current.style.justifyContent = 'flex-start';
             navbarspace.current.style.alignItems = 'flex-start';
             navbarleft.current.style.display = 'flex';
