@@ -1,6 +1,6 @@
 import React,{useRef} from 'react';
 import '../ourinfo/OurInfo.css';
-import homedesign from '/src/images/homedesign.svg';
+import homedesign from '/src/images/homedesign.jpg';
 import {motion} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useScroll } from 'framer-motion';
