@@ -18,4 +18,10 @@
   .navbar-content {
       padding: 20px 20px;
   }
+  .services-detail-container{
+    padding: 40px 20px;
+  }
+  .about-us-section {
+    padding: 80px 20px;
+}
 }

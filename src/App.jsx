@@ -10,6 +10,7 @@ import AboutUs from './components/aboutus/AboutUs';
 import Services from './components/services/Services';
 import Product from './components/product/Product';
 import { useState, useEffect } from 'react';
+import Contact from './components/contact/Contact';
 
 function App() {
   
@@ -57,7 +58,7 @@ function App() {
           <Route path='/aboutus' Component={AboutUs} />
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />
-          <Route path='/contact' Component={Product} />
+          <Route path='/contact' Component={Contact} />
         </Routes>
         <Footer activeLink={activeLink} onLinkClick={handleLinkClick} />
       </BrowserRouter>
