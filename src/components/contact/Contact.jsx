@@ -1,8 +1,37 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../contact/Contact.css';
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
+import emailjs from 'emailjs-com';
+
 
 const Contact = () => {
+
+  const [sendData, setSendData] = useState({
+    name : '',
+    email : '',
+    message : ''
+  })
+
+  const submitData = () => {
+    console.log('submiting data')
+
+    emailjs.send('service_jl2tinc', 'template_0scbd9l', sendData, '0fyyCkU6Ci1GObofE')
+    .then((result) => {
+        console.log(result.text);
+    })
+    .catch((error) => {
+        console.log(error.text);
+    });
+
+
+  }
+
+  const handleInputChange = (event) => {
+   setSendData({...sendData,[event.target.name]:event.target.value})
+  }
+
+  console.log(sendData)
+
   return (
     <div className='services-container'>
     {/* <div className="cursor"></div> */}
@@ -24,37 +53,30 @@ const Contact = () => {
             <div className='contact-qrcode-container'>
 
             <div className='contact-qrcode-left'>
-
               <div className='name-email-box'>
-
                 <div className='contactnamesec'>
                   <div className='contactname'>Name</div>
-                  <input className='contactfield' type='text'/>
+                  <input value={sendData.name} onChange={handleInputChange} className='contactfield' name='name' type='text' />
                 </div>
-
                 <div className='contactnamesec'>
                   <div className='contactname'>Email</div>
-                  <input className='contactfield' type='text'/>
+                  <input value={sendData.email} onChange={handleInputChange} className='contactfield' name='email' type='text' />
                 </div>
-
-
               </div>
               <div className='name-email-message'>
-              <div className='contactnamesec'>
+                <div className='contactnamesec'>
                   <div className='contactname'>Message</div>
-                  <textarea className='contactfield' rows={8} cols={10} type='text'/>
+                  <textarea value={sendData.message} onChange={handleInputChange} name='message' className='contactfield' rows={8} cols={10} type='text' />
                 </div>
               </div>
               <div className='name-email-submitbtn'>
-                    <div className='contactsubmitbtn'>Submit</div>
+                <div onClick={() => {submitData()}} className='contactsubmitbtn'>Submit</div>
               </div>
-
-              </div>
-              <div className='contact-qrcode-right'>
-                <div className='qr-code-image'></div>
-                </div>
             </div>
-
+            <div className='contact-qrcode-right'>
+              <div className='qr-code-image'></div>
+            </div>
+          </div>
         </div>
     </div>
 </div>

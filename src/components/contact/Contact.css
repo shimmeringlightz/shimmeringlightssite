@@ -136,3 +136,9 @@ text-align: left;
         margin-top: 40px;
     }
 }
+@media screen and (max-width:700px) and (min-width:0px) {
+    .name-email-box{
+        display: flex;
+        flex-direction: column;
+    }
+} 
