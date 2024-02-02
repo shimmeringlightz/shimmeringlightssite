@@ -195,7 +195,7 @@
 
 @media screen and (max-width : 981px) and (min-width : 0px) {
     .join-us-content {
-        border-radius: 0px;
+     
         gap: 22px;
     }
 }
