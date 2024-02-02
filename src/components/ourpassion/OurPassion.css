@@ -195,12 +195,18 @@
 
 @media screen and (max-width : 981px) and (min-width : 0px) {
     .join-us-content {
-     
+      
         gap: 22px;
     }
 }
+@media screen and (max-width : 550px) and (min-width : 0px) {
+    .join-us-content {
+        border-radius: 0px;
+      
+    }
+}
 
-@media screen and (max-width : 900px) and (min-width : 0px) {
+@media screen and (max-width : 400px) and (min-width : 0px) {
     .our-passion-content {
       
         padding: 20px 0px 40px 0px;
