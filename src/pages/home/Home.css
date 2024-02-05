@@ -17,7 +17,7 @@ background-size: contain;
     align-items: center;
     background-image: url(/src/images/homelights.jpg);
   
-    mix-blend-mode:difference;
+    /* mix-blend-mode:difference; */
     background-size: cover;
     background-position: center;
     display: flex;
