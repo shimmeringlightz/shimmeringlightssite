@@ -6,38 +6,35 @@
     flex-direction: column;
     align-items: center;
 }
-.home-page{
-  
+.home-page {
     width: 100%;
     max-width: 2000px;
     height: 100vh;
     display: flex;
-background-size: contain;
+    background-size: contain;
     justify-content: center;
     align-items: center;
     background-image: url(/src/images/homelights.jpg);
-  
     /* mix-blend-mode:difference; */
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-   
+}
+.home-empty-space {
+    height: 0px;
+}
 
-    
-}
-.home-empty-space{
- height: 0px;
-}
-.home-title{
+.home-title {
     color: #FFF;
-font-family: Montserrat;
-font-size: 72px;
-font-weight: 600;
-font-size: clamp(62px,3vw,72px);
-line-height: 90px;
+    font-family: Montserrat;
+    font-size: 72px;
+    font-weight: 600;
+    font-size: clamp(62px, 3vw, 72px);
+    line-height: 90px;
 }
-.home-content{
+
+.home-content {
     display: flex;
     flex-direction: column;
     /* background-color: rgb(154, 154, 154); */
@@ -47,95 +44,111 @@ line-height: 90px;
     align-items: flex-start;
     max-width: 1800px;
     padding: 60px 120px;
-   
+
 
 }
-.home-description{
+
+.home-description {
     font-family: Montserrat;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 38px; 
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px;
 
-color: #FFF;
+    color: #FFF;
 }
-.home-explore-btn{
+
+.home-explore-btn {
     font-family: Montserrat;
     border-radius: 16px;
-border: 1px solid #FFF;
-color: #FFF;
-/* Shadow/xs */
-box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-padding: 12px 20px;
-width: 180px;
-font-size: 16px;
-margin-top: 12px;
-cursor: pointer;
-text-decoration: none;
+    border: 1px solid #FFF;
+    color: #FFF;
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 12px 20px;
+    width: 180px;
+    font-size: 16px;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
 }
-.explore-product-link{
-text-decoration: none;
-color: white;
+
+.explore-product-link {
+    text-decoration: none;
+    color: white;
 }
-.home-content-info{
-   
+
+.home-content-info {
+
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-.home-title{
+
+.home-title {
     line-height: 90px;
 }
-.home-titles{
+
+.home-titles {
     line-height: 1px;
     overflow: hidden;
 }
-.first-title{
+
+.first-title {
 
     overflow: hidden;
 }
-.home-title-1{
+
+.home-title-1 {
     overflow: hidden;
 }
+
 /* media query */
 @media screen and (max-width : 900px) and (min-width : 0px) {
-    .home-title{
-      
-    font-size: 52px;
-    line-height: 70px; /* 125% */
+    .home-title {
+
+        font-size: 52px;
+        line-height: 70px;
+        /* 125% */
 
 
     }
-    .home-description{
+
+    .home-description {
         font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 32px; 
-    
-    color: #FFF;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+
+        color: #FFF;
     }
-    .gaps{
+
+    .gaps {
         display: none;
     }
-    .home-content{
-  
+
+    .home-content {
+
         padding: 20px 20px;
-       
-    
+
+
     }
 }
+
 @media screen and (max-width : 650px) and (min-width : 0px) {
-    .home-content{
-  
+    .home-content {
+
         padding: 20px 20px;
-       
-    
+
+
     }
-    .gaps{
+
+    .gaps {
         display: none;
     }
 }
+
 @media screen and (max-width : 530px) and (min-width : 0px) {
 
     .home-title,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../home/Home.css';
 import OurInfo from '../../components/ourinfo/OurInfo';
 import ProductsWeOffer from '../../components/productsweoffer/ProductsWeOffer';
@@ -19,44 +19,39 @@ const Home = ({ onLinkClick }) => {
     triggerOnce: true
   });
 
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
-
-  
-
   useEffect(() => {
     const cursor = document.querySelector('.cursor');
     const cursorScale = document.querySelectorAll('.faderedball');
-  
+
     let currentX = 0;
     let currentY = 0;
     let aimX = 0;
     let aimY = 0;
-  
+
     const smoothMovement = () => {
       const diffX = aimX - currentX;
       const diffY = aimY - currentY;
-  
+
       currentX += diffX * 0.1;
       currentY += diffY * 0.1;
-  
+
       gsap.set(cursor, {
         left: currentX, // Adjust as needed
         top: currentY, // Adjust as needed
       });
-  
+
       requestAnimationFrame(smoothMovement);
     };
-  
+
     smoothMovement();
-  
+
     const handleMouseMove = (e) => {
       aimX = e.clientX;
       aimY = e.clientY;
     };
-  
+
     window.addEventListener('mousemove', handleMouseMove);
-  
+
     cursorScale.forEach((link) => {
       link.addEventListener('mouseleave', () => {
         cursor.classList.remove('grow');
@@ -64,32 +59,30 @@ const Home = ({ onLinkClick }) => {
       });
       link.addEventListener('mousemove', () => {
         cursor.classList.add('grow');
-  
+
         if (link.classList.contains('small')) {
           cursor.classList.remove('grow');
           cursor.classList.add('grow-small');
         }
       });
     });
-  
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  
+
 
   return (
     <>
       <div className="cursor"></div>
-
       <div className='home-container'>
         <div className='home-page'>
           <img className='fading-red' />
           <div className='home-content'>
             <div className='home-empty-space'></div>
             <div className='home-content-info'>
-
               <div ref={ref} className='home-titles'>
                 <div className='home-title-1'>
                   <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title'>Brightening Spaces</motion.div>
@@ -97,22 +90,18 @@ const Home = ({ onLinkClick }) => {
                 <br className='gaps' />
                 <motion.div initial="initial" variants={animation} animate={true ? 'enter' : ''} className='home-title first-title'> Creating Moments</motion.div>
               </div>
-
               <div className='home-description small'>a world where lighting is an art form, a story telling <br className='gaps' /> medium, and a key player in sustainable design.</div>
               <Link to='product' onClick={() => onLinkClick('product')} className='explore-product-link'>
                 <motion.div whileHover={{ scale: 1.1 }} className='home-explore-btn'>
                   Explore Products
                 </motion.div>
               </Link>
-
             </div>
-
           </div>
         </div>
         <OurInfo />
         <ProductsWeOffer />
         <OurPassion />
-
       </div>
     </>
   )

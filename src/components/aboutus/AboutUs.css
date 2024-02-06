@@ -20,42 +20,44 @@
 
 .about-us-banner {
     /* background-color: antiquewhite; */
-
     height: 30vh;
     background-image: url(/src/images/bannerimage.svg);
-
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.about-us-text{
+
+.about-us-text {
     color: #FFF;
     margin-top: 42px;
     font-family: Montserrat;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px; /* 75% */
+    line-height: 24px;
+    /* 75% */
 }
-.about-us-section{
+
+.about-us-section {
     /* background-color: aqua; */
     width: 100%;
-height: 100%;
-justify-content: space-between;
+    height: 100%;
+    justify-content: space-between;
     display: flex;
     padding: 80px 120px;
 }
-.aboutus-sec-right{
+
+.aboutus-sec-right {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 30%;
     /* background-color: antiquewhite; */
 }
-.aboutus-sec-left{
+
+.aboutus-sec-left {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -64,75 +66,85 @@ justify-content: space-between;
     justify-content: center;
     gap: 25px;
 }
-.aboutus-left-description{
+
+.aboutus-left-description {
     color: var(--Gray-500, #667085);
-font-family: Montserrat;
-font-size: 22px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 33px */
-width: 100%;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 33px */
+    width: 100%;
 }
-.aboutus-left-title{
+
+.aboutus-left-title {
     color: var(--Gray-900, #101828);
-font-family: Montserrat;
-font-size: 48px;
-font-style: normal;
-font-weight: 500;
-line-height: 60px; /* 125% */
-letter-spacing: -0.96px;
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
 }
-@media screen and (max-width:1050px) and (min-width:0px){
-    .about-us-section{
-       
+
+@media screen and (max-width:1050px) and (min-width:0px) {
+    .about-us-section {
+
         display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       gap: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
     }
-    .aboutus-sec-right{
+
+    .aboutus-sec-right {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-      
+
         /* background-color: antiquewhite; */
     }
-    .aboutus-sec-left{
+
+    .aboutus-sec-left {
         display: flex;
         flex-direction: column;
         width: 100%;
-    
         /* background-color: rgb(111, 124, 124); */
         display: flex;
         justify-content: center;
         gap: 14px;
     }
-    .aboutimage{
+
+    .aboutimage {
         width: 40%;
         height: 40%;
     }
 }
-@media screen and (max-width:550px) and (min-width:0px){
-    .about-us-section{
-       
-     padding: 40px 20px;
+
+@media screen and (max-width:550px) and (min-width:0px) {
+    .about-us-section {
+        padding: 40px 20px;
     }
-    .aboutus-left-description{
-    font-size: 16px;
+
+    .aboutus-left-description {
+        font-size: 16px;
     }
-    .aboutus-left-title{
+
+    .aboutus-left-title {
         color: var(--Gray-900, #101828);
-    font-family: Montserrat;
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 60px; /* 125% */
-    letter-spacing: -0.96px;
+        font-family: Montserrat;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 60px;
+        /* 125% */
+        letter-spacing: -0.96px;
     }
-    .about-us-text{
+
+    .about-us-text {
         font-size: 26px;
     }
-   
 }

@@ -3,31 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* responsive media querys */
 @media screen and (max-width : 1025px) and (min-width : 550px) {
   .footer-content {
-
-      padding: 20px 20px;
+    padding: 20px 20px;
   }
+
   .footer-contacts {
     padding: 0px;
   }
 
   .our-passion-content {
-
-      padding: 60px 20px 40px 20px;
+    padding: 60px 20px 40px 20px;
   }
 
   .navbar-content {
-      padding: 20px 20px;
+    padding: 20px 20px;
   }
-  .services-detail-container{
+
+  .services-detail-container {
     padding: 40px 20px;
   }
+
   .about-us-section {
     padding: 80px 20px;
-}
-.home-content {
-  padding: 60px 20px;
-}
+  }
+
+  .home-content {
+    padding: 60px 20px;
+  }
 }

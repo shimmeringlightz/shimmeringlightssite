@@ -13,9 +13,8 @@ import { useState, useEffect } from 'react';
 import Contact from './components/contact/Contact';
 
 function App() {
-  
+
   const [activeLink, setActiveLink] = useState(null);
-  
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -25,16 +24,13 @@ function App() {
 
   useEffect(() => {
     // Clear the active link when the component mounts
- 
-   
     const storedActiveLink = sessionStorage.getItem('activeLink');
-    if (storedActiveLink  || activeLink) {
+    if (storedActiveLink || activeLink) {
       setActiveLink(storedActiveLink);
-    }else{
+    } else {
       setActiveLink('home');
     }
   }, []);
-  
 
   const lenis = new Lenis();
 
@@ -54,7 +50,7 @@ function App() {
       <BrowserRouter>
         <Navbar activeLink={activeLink} onLinkClick={handleLinkClick} />
         <Routes>
-          <Route path='/' element={<Home activeLink={activeLink} onLinkClick={handleLinkClick}/>} />
+          <Route path='/' element={<Home activeLink={activeLink} onLinkClick={handleLinkClick} />} />
           <Route path='/aboutus' Component={AboutUs} />
           <Route path='/services' Component={Services} />
           <Route path='/product' Component={Product} />
