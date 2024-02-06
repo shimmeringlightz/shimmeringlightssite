@@ -1,16 +1,18 @@
-.contact-container{
+.contact-container {
     width: 100%;
     /* height: 100vh; */
     /* background-color: rgb(107, 107, 107); */
 }
-.contact-qrcode-container{
+
+.contact-qrcode-container {
     /* background-color: rgb(176, 176, 176); */
     /* height: 100vh; */
     width: 100%;
     display: flex;
     flex-direction: row;
 }
-.contact-qrcode-left{
+
+.contact-qrcode-left {
     /* background-color: rgb(190, 190, 190); */
     width: 50%;
     display: flex;
@@ -19,45 +21,51 @@
     align-items: center;
     gap: 12px;
     padding: 0px 70px 0px 0px;
-  
 }
-.contact-qrcode-right{
+
+.contact-qrcode-right {
     /* background-color: rgb(143, 175, 175); */
     width: 50%;
 }
-.name-email-box{
+
+.name-email-box {
     display: flex;
     flex-direction: row;
     gap: 12px;
     width: 100%;
 }
-.name-email-message{
+
+.name-email-message {
     display: flex;
     width: 100%;
-
     justify-content: flex-start;
 }
-.contactfield{
-outline: none;
-border: 0px;
-padding: 10px;
-width: 100%;
-max-width: 2000px;
-background: #f2f2f2;;
-border-radius: 8px;
-/* background: #ffefef; */
+
+.contactfield {
+    outline: none;
+    border: 0px;
+    padding: 10px;
+    width: 100%;
+    max-width: 2000px;
+    background: #f2f2f2;
+    ;
+    border-radius: 8px;
+    /* background: #ffefef; */
 }
-.contactfield:active{
+
+.contactfield:active {
     outline: none;
 }
-.name-email-submitbtn{
+
+.name-email-submitbtn {
     width: 100%;
     /* background-color: rgb(120, 126, 130); */
     display: flex;
     justify-content: flex-end;
     margin-top: 12px;
 }
-.contactsubmitbtn{
+
+.contactsubmitbtn {
     background-color: #EF4344;
     color: white;
     padding: 12px 20px;
@@ -65,37 +73,38 @@ border-radius: 8px;
     width: 100px;
     display: flex;
     justify-content: center;
-   align-items: center;
-   cursor: pointer;
-
-    
+    align-items: center;
+    cursor: pointer;
 }
-.contactsubmitbtn{
+
+.contactsubmitbtn {
     font-family: Montserrat;
     font-size: 16px;
 }
-.contactname{
-    font-family: Montserrat;
-font-size: 24px;
-font-weight: 500;
-line-height: 60px;
-letter-spacing: -0.02em;
-text-align: left;
 
+.contactname {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    text-align: left;
 }
-.contactnamesec{
+
+.contactnamesec {
     /* background-color: bisque; */
     width: 100%;
-   
 }
-.contact-qrcode-right{
+
+.contact-qrcode-right {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 0px 0px 0px 60px;
     border-left: 1px solid rgb(226, 226, 226);
 }
-.qr-code-image{
+
+.qr-code-image {
     /* background-color: aqua; */
     width: 100%;
     max-width: 280px;
@@ -105,50 +114,54 @@ text-align: left;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 @media screen and (max-width:850px) and (min-width:0px) {
-    .contact-qrcode-container{
+    .contact-qrcode-container {
         flex-direction: column;
     }
-    .contact-qrcode-left,.contact-qrcode-right{
+
+    .contact-qrcode-left,
+    .contact-qrcode-right {
         width: 100%;
     }
-    .contact-qrcode-left{
+
+    .contact-qrcode-left {
         padding: 0px;
     }
-    .contact-qrcode-right{
+
+    .contact-qrcode-right {
         padding: 0px;
         justify-content: center;
         align-items: center;
         border-left: none;
     }
-    .name-email-submitbtn{
-      
+
+    .name-email-submitbtn {
+
         justify-content: center;
     }
-    .contactsubmitbtn{
-   
+
+    .contactsubmitbtn {
         width: 100%;
-      
-       
-    
-        
     }
-    .contact-qrcode-right{
-      
+
+    .contact-qrcode-right {
         padding: 40px 0px 0px 0px;
-       
     }
-    .contactsubmitbtn{
+
+    .contactsubmitbtn {
         font-family: Montserrat;
         font-size: 22px;
     }
-    .name-email-submitbtn{
+
+    .name-email-submitbtn {
         margin-top: 40px;
     }
 }
+
 @media screen and (max-width:700px) and (min-width:0px) {
-    .name-email-box{
+    .name-email-box {
         display: flex;
         flex-direction: column;
     }
-} 
+}

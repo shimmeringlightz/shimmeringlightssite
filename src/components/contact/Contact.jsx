@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../contact/Contact.css';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 
@@ -8,24 +8,24 @@ import gsap from 'gsap';
 const Contact = () => {
 
   const [sendData, setSendData] = useState({
-    name : '',
-    email : '',
-    message : ''
+    name: '',
+    email: '',
+    message: ''
   })
 
   const submitData = () => {
     console.log('submiting data')
     emailjs.send('service_jl2tinc', 'template_0scbd9l', sendData, '0fyyCkU6Ci1GObofE')
-    .then((result) => {
+      .then((result) => {
         console.log(result.text);
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error.text);
-    });
+      });
   }
 
   const handleInputChange = (event) => {
-   setSendData({...sendData,[event.target.name]:event.target.value})
+    setSendData({ ...sendData, [event.target.name]: event.target.value })
   }
 
   console.log(sendData)
@@ -34,36 +34,36 @@ const Contact = () => {
   useEffect(() => {
     const cursor = document.querySelector('.cursor');
     const cursorScale = document.querySelectorAll('.faderedball');
-  
+
     let currentX = 0;
     let currentY = 0;
     let aimX = 0;
     let aimY = 0;
-  
+
     const smoothMovement = () => {
       const diffX = aimX - currentX;
       const diffY = aimY - currentY;
-  
+
       currentX += diffX * 0.1;
       currentY += diffY * 0.1;
-  
+
       gsap.set(cursor, {
         left: currentX, // Adjust as needed
         top: currentY, // Adjust as needed
       });
-  
+
       requestAnimationFrame(smoothMovement);
     };
-  
+
     smoothMovement();
-  
+
     const handleMouseMove = (e) => {
       aimX = e.clientX;
       aimY = e.clientY;
     };
-  
+
     window.addEventListener('mousemove', handleMouseMove);
-  
+
     cursorScale.forEach((link) => {
       link.addEventListener('mouseleave', () => {
         cursor.classList.remove('aboutgrow');
@@ -71,14 +71,14 @@ const Contact = () => {
       });
       link.addEventListener('mousemove', () => {
         cursor.classList.add('aboutgrow');
-  
+
         if (link.classList.contains('aboutsmall')) {
           cursor.classList.remove('aboutgrow');
           cursor.classList.add('aboutgrow-small');
         }
       });
     });
-  
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -86,24 +86,20 @@ const Contact = () => {
 
   return (
     <div className='services-container'>
-    <div className="cursor"></div>
-    <div className='services-content'>
+      <div className="cursor"></div>
+      <div className='services-content'>
         <div className='services-banner'>
-            <div className='services-text'>Contact Us</div>
+          <div className='services-text'>Contact Us</div>
         </div>
-
         <div className='services-detail-container'>
-
-            <div className='services-detail-titledes'>
-                <div className='services-detail-title'>Contact Us</div>
-                <div className='info-serviceline-box'>
-                    <motion.div className='service-line'></motion.div>
-                </div>
-                <div className='services-detail-description faderedball'>Get in touch with Shimmering Lights! Whether you have inquiries, projects to discuss, or seek expert advice, our team is ready to illuminate your path. Reach out today and let's light up a brighter future together.</div>
+          <div className='services-detail-titledes'>
+            <div className='services-detail-title'>Contact Us</div>
+            <div className='info-serviceline-box'>
+              <motion.div className='service-line'></motion.div>
             </div>
-            
-            <div className='contact-qrcode-container'>
-
+            <div className='services-detail-description faderedball'>Get in touch with Shimmering Lights! Whether you have inquiries, projects to discuss, or seek expert advice, our team is ready to illuminate your path. Reach out today and let's light up a brighter future together.</div>
+          </div>
+          <div className='contact-qrcode-container'>
             <div className='contact-qrcode-left'>
               <div className='name-email-box'>
                 <div className='contactnamesec'>
@@ -122,7 +118,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className='name-email-submitbtn'>
-                <div onClick={() => {submitData()}} className='contactsubmitbtn'>Submit</div>
+                <div onClick={() => { submitData() }} className='contactsubmitbtn'>Submit</div>
               </div>
             </div>
             <div className='contact-qrcode-right'>
@@ -130,8 +126,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
     </div>
-</div>
   )
 }
 

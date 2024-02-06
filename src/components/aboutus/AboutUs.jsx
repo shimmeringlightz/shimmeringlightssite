@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../aboutus/AboutUs.css';
 import aboutimage from '/src/images/aboutimage.svg';
 import gsap from 'gsap';
@@ -8,36 +8,36 @@ const AboutUs = () => {
   useEffect(() => {
     const cursor = document.querySelector('.cursor');
     const cursorScale = document.querySelectorAll('.faderedball');
-  
+
     let currentX = 0;
     let currentY = 0;
     let aimX = 0;
     let aimY = 0;
-  
+
     const smoothMovement = () => {
       const diffX = aimX - currentX;
       const diffY = aimY - currentY;
-  
+
       currentX += diffX * 0.1;
       currentY += diffY * 0.1;
-  
+
       gsap.set(cursor, {
         left: currentX, // Adjust as needed
         top: currentY, // Adjust as needed
       });
-  
+
       requestAnimationFrame(smoothMovement);
     };
-  
+
     smoothMovement();
-  
+
     const handleMouseMove = (e) => {
       aimX = e.clientX;
       aimY = e.clientY;
     };
-  
+
     window.addEventListener('mousemove', handleMouseMove);
-  
+
     cursorScale.forEach((link) => {
       link.addEventListener('mouseleave', () => {
         cursor.classList.remove('aboutgrow');
@@ -45,14 +45,14 @@ const AboutUs = () => {
       });
       link.addEventListener('mousemove', () => {
         cursor.classList.add('aboutgrow');
-  
+
         if (link.classList.contains('small')) {
           cursor.classList.remove('aboutgrow');
           cursor.classList.add('aboutgrow-small');
         }
       });
     });
-  
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
