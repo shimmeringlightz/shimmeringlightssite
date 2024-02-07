@@ -88,16 +88,16 @@ const Navbar = ({ activeLink, onLinkClick }) => {
             <div ref={navbarcontent} className='navbar-content'>
                 <div ref={navbarleft} className='navbar-left'>
                     <img onClick={redirecttohome} ref={shimmeringlights} className='shimmering-logo' src={scrollY > 0.2 * window.innerHeight ? mobilelogo : logo} width='100%' height='100%' />
-                    <motion.div ref={mobiletab1} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
+                    <motion.div onClick={() => setIsNavbarToggled(!isNavbarToggled)} ref={mobiletab1} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
                         <Link to='/aboutus' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-mobile-tab'>about {activeLink === 'about' && <div className="red-dot"></div>} </Link>
                     </motion.div>
-                    <motion.div ref={mobiletab2} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
+                    <motion.div onClick={() => setIsNavbarToggled(!isNavbarToggled)} ref={mobiletab2} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
                         <Link to='/services' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-mobile-tab'>services</Link>
                     </motion.div>
-                    <motion.div ref={mobiletab3} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
+                    <motion.div onClick={() => setIsNavbarToggled(!isNavbarToggled)} ref={mobiletab3} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
                         <Link to='/product' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-mobile-tab'>product</Link>
                     </motion.div>
-                    <motion.div ref={mobiletab4} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
+                    <motion.div onClick={() => setIsNavbarToggled(!isNavbarToggled)} ref={mobiletab4} whileHover={{ scale: 1.2 }} className='navbar-mobile-tab'>
                         <Link to='/contact' style={{ color: scrollY > 0.2 * window.innerHeight ? 'black' : 'white' }} className='navbar-mobile-tab'>contact</Link>
                     </motion.div>
                 </div>

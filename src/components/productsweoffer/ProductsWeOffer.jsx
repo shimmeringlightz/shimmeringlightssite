@@ -2,8 +2,9 @@ import React from 'react';
 import '../productsweoffer/ProductsWeOffer.css';
 import interiorlights from '/src/images/interiorlights.svg';
 import { motion, useScroll } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const ProductsWeOffer = () => {
+const ProductsWeOffer = (onLinkClick) => {
 
     const { scrollYProgress } = useScroll()
 
@@ -17,9 +18,11 @@ const ProductsWeOffer = () => {
                 <div className='info-description infodes'>Providing uniform, well-balanced illumination. Aspects of the building architecture and the interior design, who believe that illumination is more than just bulbs and circuits. It's about evoking emotions, creating atmosphere, and guiding the eye like a skilled storyteller.</div>
                 <div className='products-weoffer-section'>
 
-                    <motion.div whileHover={{ scale: 1.03 }} className='products-weoffer-box interiorlights'>
 
-                        <div className='products-weoffer-titlear '>
+
+                    <motion.div whileHover={{ scale: 1.03 }} className='products-weoffer-box interiorlights'>
+                       <Link to='/product' onClick={() => onLinkClick('product')} style={{ textDecoration: 'none' }}>
+                       <div className='products-weoffer-titlear '>
                             <div>Interior Lights</div>
                             <div>
                                 <svg className='morearrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -29,10 +32,14 @@ const ProductsWeOffer = () => {
                                 </svg>
                             </div>
                         </div>
+                       </Link>
+                    
 
                     </motion.div>
+
                     <motion.div whileHover={{ scale: 1.03 }} className='products-weoffer-box outdoorlights'>
-                        <div className='products-weoffer-titlear'>
+                    <Link to='/product' onClick={() => onLinkClick('product')} style={{ textDecoration: 'none' }}>
+                    <div className='products-weoffer-titlear'>
                             <div>Outdoor Lights</div>
                             <div>
                                 <svg className='morearrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -42,9 +49,13 @@ const ProductsWeOffer = () => {
                                 </svg>
                             </div>
                         </div>
+                        </Link>
+                       
                     </motion.div>
+
                     <motion.div whileHover={{ scale: 1.03 }} className='products-weoffer-box roadlighting'>
-                        <div className='products-weoffer-titlear'>
+                    <Link to='/product' onClick={() => onLinkClick('product')} style={{ textDecoration: 'none' }}>
+                    <div className='products-weoffer-titlear'>
                             <div>Road Lighting</div>
                             <div>
                                 <svg className='morearrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -54,9 +65,13 @@ const ProductsWeOffer = () => {
                                 </svg>
                             </div>
                         </div>
+                        </Link>
+                     
                     </motion.div>
+
                     <motion.div whileHover={{ scale: 1.03 }} className='products-weoffer-box valueengineering'>
-                        <div className='products-weoffer-titlear'>
+                    <Link to='/product' onClick={() => onLinkClick('product')} style={{ textDecoration: 'none' }}>
+                    <div className='products-weoffer-titlear'>
                             <div>Value Engineering</div>
                             <div>
                                 <svg className='morearrow' xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -66,6 +81,8 @@ const ProductsWeOffer = () => {
                                 </svg>
                             </div>
                         </div>
+                        </Link>
+                       
                     </motion.div>
 
                 </div>
