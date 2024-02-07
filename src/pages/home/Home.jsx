@@ -99,8 +99,8 @@ const Home = ({ onLinkClick }) => {
             </div>
           </div>
         </div>
-        <OurInfo />
-        <ProductsWeOffer />
+        <OurInfo onLinkClick={onLinkClick}/>
+        <ProductsWeOffer onLinkClick={onLinkClick} />
         <OurPassion />
       </div>
     </>

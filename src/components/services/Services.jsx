@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import '../services/Services.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
+import servicedesign from '/src/images/servicedesign.png';
+import serviceengineering from '/src/images/serviceengineering.png';
+import servicesupply from '/src/images/servicesupply.png';
 
 
 const Services = () => {
@@ -76,7 +79,9 @@ const Services = () => {
             <div className='services-detail-description'>Explore our diverse range of lighting services, meticulously crafted to illuminate your spaces with sophistication and style. From ambient indoor glow to powerful street lighting, Shimmering Lights brings brilliance to every corner</div>
           </div>
           <div className='services-detail-design'>
-            <div className='services-detail-left'></div>
+            <div className='services-detail-left'>
+              <img className='serviceimg' src={servicedesign}/>
+            </div>
             <div className='services-detail-right'>
               <div className='services-detail-title'>Design</div>
               <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
@@ -96,10 +101,14 @@ const Services = () => {
                 other relevant documentation.</div>
               <motion.div whileHover={{ scale: 1.04 }} className='enquiry-now'>Enquiry Now</motion.div>
             </div>
-            <div className='services-detail-left box-b'></div>
+            <div className='services-detail-left box-b'>
+            <img className='serviceimg' src={serviceengineering}/>
+            </div>
           </div>
           <div className='services-detail-design'>
-            <div className='services-detail-left'></div>
+            <div className='services-detail-left'>
+            <img className='serviceimg' src={servicesupply}/>
+            </div>
             <div className='services-detail-right'>
               <div className='services-detail-title'>Supply</div>
               <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
