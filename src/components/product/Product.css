@@ -93,7 +93,8 @@
 
 .product-sec-knowmore {
     border-radius: 12px;
-    background: #EF4344;
+    background: #ef434345;
+    /* background: #EF4344; */
     padding: 12px 20px;
     color: #FFF;
     font-family: Montserrat;
@@ -104,7 +105,7 @@
     line-height: 24px;
     /* 150% */
     width: 150px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 @media screen and (max-width:1045px) and (min-width:0px) {
@@ -129,7 +130,7 @@
 
     .product-sec-knowmore {
         border-radius: 12px;
-        background: #EF4344;
+      
         padding: 10px 10px;
         color: #FFF;
         font-family: Montserrat;
