@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import servicedesign from '/src/images/servicedesign.png';
 import serviceengineering from '/src/images/serviceengineering.png';
 import servicesupply from '/src/images/servicesupply.png';
+import ContactModale from '../contactmodal/ContactModale';
 
 
 const Services = () => {
@@ -62,8 +63,13 @@ const Services = () => {
     };
   }, []);
 
+  const openModale = () => {
+    document.getElementById("modalecontainer").style.display = 'flex';
+  }
+
 
   return (
+    <>
     <div className='services-container'>
       <div className="cursor"></div>
       <div className='services-content'>
@@ -87,7 +93,7 @@ const Services = () => {
               <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
                 optimal lighting conditions for occupants while adhering to energy efficiency
                 and sustainability principles. Well-balanced luminance distribution the luminance of all surfaces shall be taken into consideration. The lighting designer shall consider and select the appropriate reflectance and illuminance values for the interior surfaces.</div>
-              <motion.div whileHover={{ scale: 1.04 }} className='enquiry-now'>Enquiry Now</motion.div>
+              <motion.div whileHover={{ scale: 1.04 }}  onClick={()=>openModale()} className='enquiry-now'>Enquiry Now</motion.div>
             </div>
           </div>
           <div className='services-detail-design'>
@@ -99,7 +105,7 @@ const Services = () => {
                 Rationale communication & understand the project requirements, Identify the
                 materials including approval for, formal submittal package, drawings and any
                 other relevant documentation.</div>
-              <motion.div whileHover={{ scale: 1.04 }} className='enquiry-now'>Enquiry Now</motion.div>
+              <motion.div whileHover={{ scale: 1.04 }}  onClick={()=>openModale()} className='enquiry-now'>Enquiry Now</motion.div>
             </div>
             <div className='services-detail-left box-b'>
             <img className='serviceimg' src={serviceengineering}/>
@@ -114,12 +120,14 @@ const Services = () => {
               <div className='service-detail-description faderedball'>Primary guideline for lighting professionals, architects, and engineers, ensuring
                 optimal lighting conditions for occupants while adhering to energy efficiency
                 and sustainability principles. Well-balanced luminance distribution the luminance of all surfaces shall be taken into consideration. The lighting designer shall consider and select the appropriate reflectance and illuminance values for the interior surfaces.</div>
-              <motion.div whileHover={{ scale: 1.04 }} className='enquiry-now'>Enquiry Now</motion.div>
+              <motion.div onClick={()=>openModale()} whileHover={{ scale: 1.04 }} className='enquiry-now'>Enquiry Now</motion.div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <ContactModale/>
+    </>
   )
 }
 

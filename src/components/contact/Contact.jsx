@@ -3,9 +3,13 @@ import '../contact/Contact.css';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import gsap from 'gsap';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Contact = () => {
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const [sendData, setSendData] = useState({
     name: '',
@@ -14,14 +18,36 @@ const Contact = () => {
   })
 
   const submitData = () => {
-    console.log('submiting data')
-    emailjs.send('service_jl2tinc', 'template_0scbd9l', sendData, '0fyyCkU6Ci1GObofE')
+    
+    if(emailRegex.test(sendData.email)  && sendData.message != '' && sendData.name != '' && sendData.email != ''){
+
+      emailjs.send('service_jl2tinc', 'template_0scbd9l', sendData, '0fyyCkU6Ci1GObofE')
       .then((result) => {
+        setSendData({
+          name: '',
+          email: '',
+          message: ''
+        })
         console.log(result.text);
+       
+        toast.success('Email Send Successfully');
+      
       })
       .catch((error) => {
+        setSendData({
+          name: '',
+          email: '',
+          message: ''
+        })
         console.log(error.text);
+        toast.error('Email Failed To Send');
+      
       });
+
+
+    }else{
+      toast.error('Invalid Details');
+    }
   }
 
   const handleInputChange = (event) => {
@@ -127,6 +153,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+      position="bottom-right"
+      hideProgressBar={true}
+      />
     </div>
   )
 }
