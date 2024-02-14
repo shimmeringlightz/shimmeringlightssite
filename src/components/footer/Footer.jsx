@@ -271,9 +271,9 @@ const Footer = ({ activeLink, onLinkClick }) => {
                         </div>
                         <div className='footer-services-section'>
                             <div className='company-service-title'>Services</div>
-                            <motion.div whileHover={{ scale: 1.04 }} className='company-service-tab'>Design</motion.div>
-                            <motion.div whileHover={{ scale: 1.04 }} className='company-service-tab'>Engineering</motion.div>
-                            <motion.div whileHover={{ scale: 1.04 }} className='company-service-tab'>Supply</motion.div>
+                            <motion.div whileHover={{ scale: 1.04 }} onClick={() => onLinkClick('services')} className='company-service-tab'><Link className='remove-textdec' to="services">Design</Link> </motion.div>
+                            <motion.div whileHover={{ scale: 1.04 }} onClick={() => onLinkClick('services')} className='company-service-tab'><Link className='remove-textdec' to="services">Engineering</Link></motion.div>
+                            <motion.div whileHover={{ scale: 1.04 }} onClick={() => onLinkClick('services')} className='company-service-tab'><Link className='remove-textdec' to="services">Supply</Link></motion.div>
                         </div>
                     </div>
                 </div>
